@@ -14,7 +14,9 @@
         <div class="row border p-3">
             
             <div class="col-md-2">
-                <img src="{{asset($input_result->img_url)}}" style="height:130px;width:120px;" class="img-fluid">
+                <a href="{{route('postItem.show',$input_result->id)}}">
+                    <img src="{{asset($input_result->img_url)}}" style="height:130px;width:120px;" class="img-fluid">
+                </a>
             </div>
             
             <div class="col-md-9">

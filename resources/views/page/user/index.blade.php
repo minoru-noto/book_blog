@@ -26,6 +26,16 @@
       </div>
   </div>
   
+  <!--<div>-->
+    
+  <!--  <div class="container">-->
+  <!--    <div class="row">-->
+  <!--      <div class="col-md-"></div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+    
+  <!--</div>-->
+  
   <div class="mt-2" style="height:520px;">
       
       <div class="container">
@@ -34,7 +44,9 @@
               
               @foreach($readItems as $readItem)
               <div class="col-md-4 text-center mb-3 pb-2 pt-2 border-bottom">
+                <a href="{{route('postItem.show',$readItem->postItem_id)}}">
                   <img src="{{asset($readItem->postItem->img_url)}}" class="img-fluid book_img">
+                </a>
               </div>
               @endforeach
              
