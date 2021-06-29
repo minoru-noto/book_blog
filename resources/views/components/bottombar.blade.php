@@ -17,7 +17,7 @@
            <p class="text-muted text-size">注目</p>
        </div>
        <div class="flex-fill bd-highlight text-center pt-2">
-           <a href="#"><i class="fas fa-cog fa-2x"></i></a>
+           <a href="{{route('setting.index')}}"><i class="fas fa-cog fa-2x"></i></a>
            <p class="text-muted text-size">設定</p>
        </div>
    </div>

@@ -10,10 +10,22 @@
               <img src="{{asset('img/user_08.png')}}" class="rounded-circle border border-dark img_size">
           </div>
           <div class="col-md-8 pt-2">
-              <h5><a href="#">{{Auth::user()->name}}さん&nbsp;&nbsp;＞</a></h5>
+              
+              <h5><a href="#">{{$user->name}}さん&nbsp;&nbsp;＞</a></h5>
+              
               <div class="mt-3">
-                  <a class="btn btn-outline-dark">本棚紹介の編集</a>
+                  @if(Auth::user()->id == $user->id)
+                  <a class="btn btn-outline-dark">
+                      本棚紹介の編集
+                　</a>
+                　@else
+                  <a  class="btn btn-outline-dark">
+                    <i class="far fa-envelope mr-2"></i>メッセージを送る
+                  </a>
+                  @endif
               </div>
+              
+              @if(Auth::user()->id == $user->id)
               <div class="text-right mt-3">
                   <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
                   
@@ -22,6 +34,8 @@
                     <a class="dropdown-item" href="#"><i class="fas fa-user"></i>  プロフィール編集</a>
                   </div>
               </div>
+              @endif
+              
           </div>
       </div>
   </div>

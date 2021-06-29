@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ReadItem;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        $readItems = ReadItem::orderBy('created_at','desc')->get();
+        $readItems->load('postItem','user');
+        
+        return view('home',[
+            'readItems'=> $readItems    
+        ]);
     }
 }

@@ -21,5 +21,9 @@ class ReadItem extends Model
         return $this->belongsTo('App\PostItem','postItem_id','id');
     }
     
+    public function user()
+    {
+        return $this->belongsTo('App\User','user_id','id');
+    }
     
 }
