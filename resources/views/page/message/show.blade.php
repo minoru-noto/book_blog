@@ -6,7 +6,7 @@
    <div class="d-flex pb-2 mt-4 border-bottom">
        
        <div class="ml-4 mr-4">
-           <a href="#">＞戻る</a>
+           <a href="{{route('user.show',$user->id)}}">＞戻る</a>
        </div>
    
        <div class="">
