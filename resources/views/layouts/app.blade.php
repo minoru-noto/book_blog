@@ -36,6 +36,18 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <div class="dropdown">
+                    <a href="#" class="text-white" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/home"><i class="fas fa-home"></i> ホーム</a>
+                        <a class="dropdown-item" href="{{route('user.index')}}"><i class="fas fa-book-reader"></i> 本棚</a>
+                        <a class="dropdown-item" href="{{route('postItem.index')}}"><i class="fas fa-search"></i> さがす</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-fire-alt"></i> 注目</a>
+                        <a class="dropdown-item" href="{{route('setting.index')}}"><i class="fas fa-cog"></i> 設定</a>
+                    </div>
+                            
+                </div>
                 
             </div>
         </nav>

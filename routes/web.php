@@ -33,5 +33,7 @@ Route::group(['middleware' => ['web']], function () {
    
    Route::resource('comment', 'CommentController');
    
+   Route::resource('message', 'MessageController');
+   
 });
 

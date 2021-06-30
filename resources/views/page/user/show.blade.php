@@ -19,7 +19,7 @@
                       本棚紹介の編集
                 　</a>
                 　@else
-                  <a  class="btn btn-outline-dark">
+                  <a href="{{route('message.show',$user->id)}}" class="btn btn-outline-dark">
                     <i class="far fa-envelope mr-2"></i>メッセージを送る
                   </a>
                   @endif
