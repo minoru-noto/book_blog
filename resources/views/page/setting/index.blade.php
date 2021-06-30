@@ -15,10 +15,10 @@
               
               <div class="row">
                   <div class=" offset-md-1 col-md-9">
-                    <p><a href="#" class="text-dark"><i class="fas fa-key mr-2"></i>パスワード変更</a></p>
+                    <p><a href="{{route('setting.edit',Auth::user()->id)}}" class="text-dark"><i class="fas fa-key mr-2"></i>パスワード変更</a></p>
                   </div>
                   <div class="col-md-2">
-                    <p><a href="#" class="text-dark"><i class="fas fa-chevron-right"></i></a></p>
+                    <p><a href="{{route('setting.edit',Auth::user()->id)}}" class="text-dark"><i class="fas fa-chevron-right"></i></a></p>
                   </div>
               </div>
               

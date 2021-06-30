@@ -77,6 +77,8 @@ class PostItemController extends Controller
      */
     public function show($id)
     {
+        // dd($id);
+        
         $postItem = PostItem::find($id);
         
         $commentItems = CommentItem::where('postItem_id',$id)->get();

@@ -10,10 +10,29 @@
         </div>
     </div>
     @endif
+    
    @if (session('read_miss'))
     <div class="p-3 mb-3 mt-5 bg-danger text-white w-50 mx-auto  rounded">
         <div class="text-center">
         <i class="fas fa-book-open"></i>  {{ session('read_miss') }}
+        </div>
+    </div>
+    @endif
+    
+    
+    @if (session('password_success'))
+    <div class="p-3 mb-3 mt-5 bg-success text-white w-50 mx-auto  rounded">
+        <div class="text-center">
+        <i class="fas fa-lock"></i>  {{ session('password_success') }}
+        </div>
+    </div>
+    @endif
+   
+    
+   @if (session('password_miss'))
+    <div class="p-3 mb-3 mt-5 bg-danger text-white w-50 mx-auto  rounded">
+        <div class="text-center">
+        <i class="fas fa-lock"></i>  {{ session('password_miss') }}
         </div>
     </div>
     @endif
@@ -44,7 +63,7 @@
                   <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <a href="{{route('postItem.show',$readItem->id)}}">
+                            <a href="{{route('postItem.show',$readItem->postItem_id)}}">
                                 <img src="{{asset($readItem->postItem->img_url)}}"  style="width:110px;height:140px;" class="">
                             </a>
                         </div>

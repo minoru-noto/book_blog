@@ -65,7 +65,7 @@
                     <p>
                         
                         @for($i = 0; $i < $commentItem->rank; $i++)
-                            <i class="far fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
                         @endfor
                         
                     </p>
