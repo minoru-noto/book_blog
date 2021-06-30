@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ReadItem;
+use App\CommentReadItems;
 
 class HomeController extends Controller
 {
@@ -25,11 +26,16 @@ class HomeController extends Controller
     public function index()
     {
         
-        $readItems = ReadItem::orderBy('created_at','desc')->get();
+        $readItems = ReadItem::orderBy('created_at','desc')->paginate(10);
         $readItems->load('postItem','user');
         
+        
+        // dd($comment_counts);
+            
+        
         return view('home',[
-            'readItems'=> $readItems    
+            'readItems'=> $readItems,
+           
         ]);
     }
 }
