@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\PostItem;
 use App\CommentItem;
 
-class PostItemController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,37 +14,7 @@ class PostItemController extends Controller
      */
     public function index()
     {
-        
-        return view('page.postItem.search');
-        
-    }
-    
-    public function search(Request $request)
-    {
-        
-        
-        $input_search = $request->input('search');
-        
-        
-        $input_results = PostItem::where('name','like','%'.$input_search.'%')
-                                ->orWhere('author','like','%'.$input_search.'%')
-                                ->get();
-                                
-        // dd(count($input_results));
-        
-        if(count($input_results) == 0){
-            
-            return redirect(route('postItem.index'))->with('search_miss','そのような本は見つかりませんでした。');
-            
-        }
-        
-        
-        return view('page.postItem.search_show',[
-              'input_results' => $input_results,
-              'input_search' => $input_search
-        ]);
-        
-        
+        //
     }
 
     /**
@@ -53,9 +22,16 @@ class PostItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
+        $comment_id = $request->input('id');
+        
+        
+        return view('page.comment.create',[
+            'comment_id' => $comment_id,
+        ]);
+        
     }
 
     /**
@@ -66,7 +42,19 @@ class PostItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        
+        $commentItem = new CommentItem();
+        
+        $commentItem->user_id = $request->input('user_id');
+        $commentItem->postItem_id = $request->input('postItem_id');
+        $commentItem->content = $request->input('content');
+        $commentItem->rank = $request->input('rank');
+        $commentItem->save();
+        
+        return redirect(route('comment.create'))->with('comment_success','コメントを追加しました');
+        
+        
     }
 
     /**
@@ -77,16 +65,7 @@ class PostItemController extends Controller
      */
     public function show($id)
     {
-        $postItem = PostItem::find($id);
-        
-        $commentItems = CommentItem::where('postItem_id',$id)->get();
-        $commentItems->load('user');
-        
-        return view('page.postItem.show',[
-            'postItem' => $postItem,
-            'commentItems' => $commentItems
-        ]);
-        
+        //
     }
 
     /**
@@ -122,6 +101,4 @@ class PostItemController extends Controller
     {
         //
     }
-    
-    
 }

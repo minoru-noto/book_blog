@@ -31,5 +31,7 @@ Route::group(['middleware' => ['web']], function () {
    
    Route::resource('setting', 'SettingController');
    
+   Route::resource('comment', 'CommentController');
+   
 });
 

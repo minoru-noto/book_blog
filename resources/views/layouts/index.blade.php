@@ -22,12 +22,14 @@
 <body>
     <div id="app w-50 mx-auto">
         
-        @auth
+        
         <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm w-50 mx-auto mt-3">
             <div class="container">
-                <a class="navbar-brand text-white" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <div class="w-100 text-center">
+                    <a class="navbar-brand text-white " href="{{ url('/') }}">
+                        <i class="fas fa-book-open mr-2"></i>BookCart
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -73,7 +75,7 @@
                 </div>
             </div>
         </nav>
-        @endauth
+        
 
         <main class="p-4">
             @yield('content')

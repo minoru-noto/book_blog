@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostItem extends Model
+class CommentItem extends Model
 {
     
     /**
@@ -13,14 +13,12 @@ class PostItem extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'author', 'content','img_url'
+        'user_id', 'postItem_id', 'content','rank'
     ];
     
     public function user()
     {
         return $this->belongsTo('App\User','user_id','id');
     }
-    
-    
     
 }
