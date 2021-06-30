@@ -49,9 +49,34 @@
                   </div>
               </div>
               
-          </div>
           
       </div>
+          <div class="container border-bottom pt-2 pb-1">
+              
+              <div class="row">
+                  <div class=" offset-md-1 col-md-9">
+                    <p>
+                      <form action="{{route('user.destroy',Auth::user()->id)}}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
+                        <button type="submit" class="text-dark" id="out_btn" style="appearance:none;border:none;background-color: transparent;"><i class="fas fa-ban mr-2"></i>退会する</button>
+                      </form>
+                    </p>
+                  </div>
+                  <div class="col-md-2">
+                    <p>
+                      <form action="{{route('user.destroy',Auth::user()->id)}}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
+                        <button type="submit" class="text-dark" id="out_btn" style="appearance:none;border:none;background-color: transparent;"><i class="fas fa-chevron-right"></i></button>
+                      </form>
+                    </p>
+                  </div>
+              </div>
+              
+          </div>
       
   </div>
    
@@ -59,4 +84,24 @@
    @endcomponent
    
 </div>
+
+
+<script>
+  
+   document.getElementById('out_btn').addEventListener('click',function() {
+    
+     var result = window.confirm('本当に退会します？')
+    
+     if(result) {
+    
+     }else{
+       
+     }
+    
+   });
+  
+  
+</script>
+
+
 @endsection

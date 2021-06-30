@@ -52,6 +52,7 @@ class UserController extends Controller
     }
 
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -60,6 +61,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        User::destroy($id);
+        
+        return redirect('/login');
+        
     }
 }
